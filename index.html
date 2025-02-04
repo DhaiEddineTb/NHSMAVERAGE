@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Calculator</title>
+    <link rel="stylesheet" href="C:\Users\Dell\Desktop\LES DOSSIERS\site\grade.css"
+</head>
+<body>
+    <h1>NHSM CP1 Average Calculator</h1>
+    <table id="gradesTable">
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Exam Score</th>
+                <th>NOTE CC</th>
+                <th>Coefficient</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 8 rows for 8 subjects -->
+            <script>
+                const subjectNames = [
+                    "ANALYSE 1",
+                    "ALGEBRE 1",
+                    "MATH DESCRETE 1",
+                    "PHYSICS 1",
+                    "ASD 1",
+                    "STATICS",
+                    "ENGLISH",
+                    "MATH HISTORY"
+                ];
+
+                const coefficients = [5, 5, 3, 2, 2, 3, 1, 1];
+
+                for (let i = 0; i < subjectNames.length; i++) {
+                    document.write(`
+                        <tr>
+                            <td>${subjectNames[i]}</td>
+                            <td><input type="number" min="0" max="20" step="0.25" class="examScore"></td>
+                            <td><input type="number" min="0" max="20" step="0.25" class="workScore"></td>
+                            <td><input type="number" min="1" step="1" class="coefficient" value="${coefficients[i]}" readonly></td>
+                        </tr>
+                    `);
+                }
+            </script>
+        </tbody>
+    </table>
+    <button class="button" onclick="calculateAverage()">Calculate General Average</button>
+    <div class="result" id="result"></div>
+
+     <script src="grade.js"></script>
+
+</body>
+</html>
